@@ -1,0 +1,28 @@
+<html>
+    <head>
+        Task List
+    </head>
+    <body>
+        <table border="5">
+            <tr>
+                <th>
+                    Task Name
+                </th>
+                <th>
+                    Is Done
+                </th>
+            </tr>
+           {% for task in TaskList: %}
+                <tr>
+                    <td>
+                        {{ task[0] }}
+                    </td>
+                    <td>
+                        {{ task[1] }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+
+</html>
