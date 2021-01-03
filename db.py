@@ -16,6 +16,7 @@ def getTaskList():
 def addTask(name, date):
     conn = psycopg2.connect(dbname=db_name, user=db_user, password=db_pw, host=db_host)
     cur = conn.cursor()
-    cur.execute('INSERT INTO public."TaskList"(task_name, due_date) values(\'%s\', \'%s\');commit;' % (name, date))
+    cur.execute('INSERT INTO public."TaskList"(task_name, due_date) values(\'%s\', \'%s\');' % (name, date))
+    conn.commit()
     cur.close
     conn.close
